@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import MessageList from '../../src/components/MessageList'
-import Message from '../../src/components/Message'
+import MessageList from '@/First/components/MessageList'
+import Message from '@/First/components/Message'
 
 describe('MessageList.test.js', () => {
   let cmp
@@ -16,6 +16,8 @@ describe('MessageList.test.js', () => {
 
   it('has received ["Cat"] as the message property', () => {
     expect(cmp.vm.messages).toEqual(['Cat'])
+    // Un mejor enfoque es comprobar que el mensaje aparece en la pantalla,
+    // No que el dato se ha seteado correctamente en las props (implementation details)
   })
 
   it('has the expected html structure', () => {
@@ -23,9 +25,10 @@ describe('MessageList.test.js', () => {
   })
 
   it('is a MessageList component', () => {
+    // The user doesn't bother about this
     expect(cmp.is(MessageList)).toBe(true)
 
-    // Or with CSS selector
+    // Neither this
     expect(cmp.is('ul')).toBe(true)
   })
 
@@ -74,5 +77,28 @@ describe('MessageList.test.js', () => {
     const el = cmp.find('.message').vm.$emit('message-clicked', 'Cat')
 
     expect(stub).toBeCalledWith('Cat')
+  })
+})
+
+describe('Custom tests', () => {
+  let cmp
+
+  beforeEach(() => {
+    cmp = mount(MessageList, {
+      propsData: {
+        messages: ['Cat']
+      }
+    })
+  })
+
+  it('Testing implementation details', () => {
+    const spy = jest.spyOn(cmp.vm, 'handleMessageClick')
+
+    expect(cmp.vm.isMessageClicked).toBe(false)
+
+    cmp.vm.handleMessageClick('message!')
+    expect(spy).toHaveBeenCalled()
+    expect(spy).toBeCalledWith('message!')
+    expect(cmp.vm.isMessageClicked).toBe(true)
   })
 })

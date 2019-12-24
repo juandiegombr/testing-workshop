@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import App from '../../src/App'
+import App from '@/First/App'
 
 describe('App.test.js', () => {
   let cmp

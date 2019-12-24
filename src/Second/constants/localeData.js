@@ -1,0 +1,30 @@
+const localeData = {
+  ES: { locale: 'es-ES', language: 'es-ES', currency: 'EUR', symbol: '€' },
+  BR: { locale: 'pt-BR', language: 'pt-BR', currency: 'BRL', symbol: 'R$' },
+  PE: { locale: 'es-PE', language: 'es-PE', currency: 'PEN', symbol: 'S/.' },
+  AR: { locale: 'es-AR', language: 'es-AR', currency: 'ARS', symbol: '$' },
+  CL: { locale: 'es-CL', language: 'es-CL', currency: 'CLP', symbol: '$' },
+  CO: { locale: 'es-CO', language: 'es-CO', currency: 'COP', symbol: '$' },
+  MX: { locale: 'es-MX', language: 'es-MX', currency: 'MXN', symbol: '$' },
+  UY: { locale: 'es-UY', language: 'es-UY', currency: 'UYU', symbol: '$U' },
+  CR: { locale: 'es-CR', language: 'es-CR', currency: 'CRC', symbol: '₡' },
+  PA: { locale: 'es-PA', language: 'es-PA', currency: 'USD', symbol: '$' },
+  EC: { locale: 'es-EC', language: 'es-EC', currency: 'USD', symbol: '$' },
+  TR: { locale: 'tr-TR', language: 'tr-TR', currency: 'TRY', symbol: '₺' },
+  PH: { locale: 'en-PH', language: 'en-PH', currency: 'PHP', symbol: '₱' },
+  EG: { locale: 'ar-EG', language: 'ar-EG', currency: 'EGP', symbol: 'E£' },
+  PY: { locale: 'es-PY', language: 'es-PY', currency: 'PYG', symbol: '₲' },
+  GT: { locale: 'es-GT', language: 'es-GT', currency: 'GTQ', symbol: 'Q' },
+  BO: { locale: 'es-BO', language: 'es-BO', currency: 'BOB', symbol: 'Bs' },
+  DO: { locale: 'es-DO', language: 'es-DO', currency: 'DOP', symbol: 'RD$' },
+  VN: { locale: 'vi-VN', language: 'vi-VN', currency: 'VND', symbol: 'đ' },
+  HN: { locale: 'es-HN', language: 'es-HN', currency: 'HNL', symbol: 'L' },
+  SV: { locale: 'es-SV', language: 'es-SV', currency: 'USD', symbol: '$' },
+  HK: { locale: 'en-HK', language: 'en-HK', currency: 'HKD', symbol: 'HK$' },
+  ID: { locale: 'id-ID', language: 'id-ID', currency: 'IDR', symbol: 'Rp' },
+  SG: { locale: 'en-SG', language: 'en-SG', currency: 'SGD', symbol: 'S$' },
+  TH: { locale: 'th-TH', language: 'th-TH', currency: 'THB', symbol: '฿' },
+  PR: { locale: 'es-PR', language: 'es-PR', currency: 'USD', symbol: '$' }
+}
+
+export default localeData

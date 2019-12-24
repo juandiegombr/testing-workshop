@@ -6,7 +6,9 @@ exports[`MessageList.test.js has the expected html structure 1`] = `
     class="message"
     style="padding-top: 10px;"
   >
-    Cat
+    
+  Cat
+
   </li>
 </ul>
 `;

@@ -1,9 +1,12 @@
 import { mount } from '@vue/test-utils'
-import Message from '../../src/components/Message'
+import Message from '@/First/components/Message'
+
+// Exercise 02:
+// Break the tests without breaking the component
 
 const createCmp = propsData => mount(Message, { propsData })
 
-describe('Message.test.js', () => {
+describe('Exercise02.spec.js', () => {
   let cmp
 
   describe('Properties', () => {
@@ -48,11 +51,11 @@ describe('Message.test.js', () => {
     it('calls handleClick when click on message', () => {
       const handleClick = jest.fn()
       cmp.setMethods({ handleClick })
-      const el = cmp.find('.message').trigger('click')
+      const el = cmp.find(".message").trigger('click')
 
       expect(handleClick).toBeCalled()
     })
-
+    
     it('triggers a message-clicked event when a handleClick method is called', () => {
       const stub = jest.fn()
       cmp.vm.$on('message-clicked', stub)

@@ -1,10 +1,12 @@
 <template>
-  <li style="padding-top: 10px" class="message" @click="handleClick">{{message}}</li>
+  <li style="padding-top: 10px" class="message" @click="handleClick">
+    {{ message }}
+  </li>
 </template>
 
 <script>
 export default {
-  name: "Message",
+  name: 'Message',
   props: {
     message: {
       type: String,
@@ -14,13 +16,13 @@ export default {
     message2: String,
     author: {
       type: String,
-      default: "Paco"
+      default: 'Paco'
     }
   },
   methods: {
     handleClick() {
-      this.$emit("message-clicked", this.message);
+      this.$emit('message-clicked', this.message)
     }
   }
-};
+}
 </script>
