@@ -9,6 +9,7 @@
     <input v-model="password" id="password" type="text">
     <button type="submit">Submit</button>
   </form>
+  <p v-if="error">{{$t('error')}}</p>
 </div>
 </template>
 
@@ -16,20 +17,30 @@
 export default {
   name: 'Login',
   methods: {
-    handleLogin () {
+    loginSuccess () {
+      this.error = false
+      this.$router.push('/')
       this.$i18n.locale = 'es'
-      localStorage.setItem('token', 'abcde')
-      this.$store.commit('auth/SET_USER', {
+    },
+    loginError () {
+      this.error = true
+    },
+    handleLogin (e) {
+      e.preventDefault()
+      const user = {
         username: this.username,
         password: this.password
-      })
-      this.$router.push('/')
+      }
+      this.$store.dispatch('auth/login', user)
+        .then(this.loginSuccess)
+        .catch(this.loginError)
     }
   },
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      error: false
     }
   }
 }

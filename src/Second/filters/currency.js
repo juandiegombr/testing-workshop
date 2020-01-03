@@ -17,7 +17,6 @@ export default (value, currencyDisplay) => {
     currency
   }
 
-  
   let currencyValue = val.toLocaleString(language, currencyOptions)
   switch (language) {
     case localeData.EG.language:

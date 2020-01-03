@@ -1,8 +1,8 @@
 <template>
 <div>
   <h1>{{$t('welcome')}}</h1>
-  <div>{{user.username}}</div>
-  <div>{{user.password}}</div>
+  <div>{{user.fullname}}</div>
+  <div>{{user.email}}</div>
 </div>
 </template>
 

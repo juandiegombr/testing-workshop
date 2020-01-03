@@ -1,17 +1,32 @@
-// import ProviderService from '@/services/ProviderService'
-// import getProviderBeautyById from '@/services/providerBeauty/getProvider'
+import jwt from 'jwt-decode'
 
-// import User from '@/domain/models/user/User'
-// import Provider from '@/domain/models/provider/Provider'
+import authService from '@/Third/services/auth'
 
 const auth = {
   namespaced: true,
   state: {
-    user: {}
+    user: {},
+    token: null
   },
   mutations: {
     SET_USER (state, user) {
       state.user = user
+    },
+    SET_TOKEN (state, token) {
+      state.token = token
+    }
+  },
+  actions: {
+    login ({ commit }, data) {
+      return authService.login(data)
+        .then(res => {
+          const { token } = res.data
+          const user = jwt(token)
+          localStorage.setItem('token', token)
+          commit('SET_TOKEN', token)
+          commit('SET_USER', user)
+          return user
+        })
     }
   }
 }

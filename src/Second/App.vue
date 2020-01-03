@@ -12,8 +12,11 @@ export default {
   data: () => ({ }),
   components: {
     Currency
+  },
+  created () {
+    this.$store.commit('auth/SET_PROVIDER', { countryCode: 'TH' })
   }
-};
+}
 </script>
 
 <style>
