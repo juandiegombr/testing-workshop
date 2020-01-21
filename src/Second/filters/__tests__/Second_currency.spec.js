@@ -62,7 +62,7 @@ it.skip('Final: Format with Egypt currency options', () => {
     currencyFormaters,
     'handleArabicCurrency'
   )
-  store.commit('auth/setProvider', { countryCode: 'EG' })
+  store.commit('auth/SET_PROVIDER', { countryCode: 'EG' })
 
   currency(value)
 
